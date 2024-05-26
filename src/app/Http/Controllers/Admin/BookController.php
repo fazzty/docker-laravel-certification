@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Http\Request;
+use App\Http\Requests\BookPostRequest;
 use Illuminate\View\View;
 use App\Models\Book;
 use App\Models\Category;
@@ -31,7 +31,7 @@ class BookController extends Controller
         ]);
     }
     
-    public function store(Request $request): Book
+    public function store(BookPostRequest $request): Book
     {
         $book = new Book();
 
