@@ -19,5 +19,11 @@ services:
     volumes:
       - db-store:/var/lib/mysql
 
+  dynamodb:
+    image: amazon/dynamodb-local
+    container_name: dynamodb
+    ports:
+      - "8000:8000"
+
 volumes:
   db-store:

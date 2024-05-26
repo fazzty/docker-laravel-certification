@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\DynamoDbController;
 use App\Http\Controllers\Admin\BookController;
 
 /*
@@ -33,3 +34,9 @@ Route::prefix('admin/books')
         Route::get('create', 'create')->name('create');
         Route::post('', 'store')->name('store');     
     });
+
+Route::get('/dynamo', [DynamoDbController::class, 'index']);
+Route::get('/dynamo/create_table', [DynamoDbController::class, 'createTable']);
+Route::get('/dynamo/put_item', [DynamoDbController::class, 'putItem']);
+Route::get('/dynamo/get_item', [DynamoDbController::class, 'getItem']);
+
